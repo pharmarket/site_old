@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17000\viewh13100\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 -- phpMyAdmin SQL Dump\
+-- version 4.1.12\
+-- http://www.phpmyadmin.net\
+--\
+-- Client :  localhost:8889\
+-- G\'e9n\'e9r\'e9 le :  Ven 23 Mai 2014 \'e0 15:16\
+-- Version du serveur :  5.5.34\
+-- Version de PHP :  5.5.10\
+\
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";\
+SET time_zone = "+00:00";\
+\
+--\
+-- Base de donn\'e9es :  `mvc`\
+--\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Structure de la table `news`\
+--\
+\
+CREATE TABLE `news` (\
+  `id` int(11) NOT NULL AUTO_INCREMENT,\
+  `titre` varchar(250) NOT NULL,\
+  `contenu` text NOT NULL,\
+  `update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\
+  PRIMARY KEY (`id`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;\
+\
+--\
+-- Contenu de la table `news`\
+--\
+\
+INSERT INTO `news` (`id`, `titre`, `contenu`, `update`) VALUES\
+(2, 'Marketing cloud : Salesforce combine Radian6 et Buddy Media', 'Social Studio fournit aux \'e9quipes marketing un ensemble d''outils et de fonctions pour surveiller les m\'e9dias sociaux et y publier des contenus. Salesforce.com le propose gratuitement \'e0 ses clients qui utilisent \'e0 la fois Radian6 et Buddy Media.\\r\\n\\r\\nAvec l''arriv\'e9e de Social Studio au catalogue de Salesforce.com, l''\'e9diteur californien combine les fonctions d''analyse des r\'e9seaux sociaux de Radian6 et les outils de marketing web de Buddy Media. Les deux solutions ont \'e9t\'e9 respectivement acquises en mars 2011 et juin 2012 par le sp\'e9cialiste du CRM en mode SaaS.', '2014-05-06 13:34:27'),\
+(8, 'Avec Makeup Genius, L\'92Or\'e9al propose de connecter la beaut\'e9 en r\'e9alit\'e9 augment\'e9e', ' Le leader mondial de la beaut\'e9 veut aussi devenir un acteur incontournable de son secteur dans les nouvelles technologies. \'c0 l\'92occasion du Festival de Cannes, le groupe a d\'e9voil\'e9 son premier projet de beaut\'e9 connect\'e9e. L\'92occasion \'e9galement de pr\'e9senter Jacques Challes qui vient d\'92\'eatre nomm\'e9 directeur international de l\'92innovation.\\r\\nComme les grandes entreprises du Net, elle a aussi cr\'e9\'e9 un incubateur aux \'c9tats-Unis dont la direction a \'e9t\'e9 confi\'e9e \'e0 Clive Balooch. Cette unit\'e9 a mis au point Makeup Genius, une application gratuite de r\'e9alit\'e9 augment\'e9e qui permet \'e0 ceux qui le valent bien d''essayer les produits de la marque depuis une tablette ou un smartphone... Comment ? En cr\'e9ant un miroir interactif : vous voyez sur votre propre visage l''effet du produit que vous testez ! L''appli permet -\'e9videmment- de commander ensuite sur la boutique en ligne du groupe.', '2014-05-13 21:46:55'),\
+(10, 'Samsung pourrait annoncer un casque de r\'e9alit\'e9 virtuelle cette ann\'e9e', 'Oculus, Morpheus et peut-\'eatre bient\'f4t le Galaxus ? Apr\'e8s Oculus VR, qui a initi\'e9 le renouveau de la r\'e9alit\'e9 virtuelle et Sony, qui a fait vibrer la GDC, Samsung serait en train de travailler \'e0 un casque VR. Le projet aurait fait de tel progr\'e8s r\'e9cemment qu\'92il pourrait \'eatre annonc\'e9 cette ann\'e9e. Car pour le g\'e9ant cor\'e9en l\'92enjeu serait non seulement de fournir un casque fonctionnel prochainement, mais surtout de le faire avant la concurrence et \'e0 un prix moindre, pour s\'92installer sur le march\'e9 et l\'92occuper. La strat\'e9gie habituelle de Samsung.', '2014-05-23 09:04:00'),\
+(11, 'L''arm\'e9e inaugure \'e0 Rennes un centre de stockage de donn\'e9es informatiques', 'C''est \'e0 Rennes que l''arm\'e9e fran\'e7aise a install\'e9 son centre de stockage de donn\'e9es ultra-s\'e9curis\'e9. Ce centre qui a \'e9t\'e9 inaugur\'e9 ce 22 mai s''inscrit dans le cadre des efforts de rationalisation des infrastructures informatiques militaires. Install\'e9 dans d''anciennes \'e9curies datant du d\'e9but du XXe si\'e8cle, le Centre Gabriel Romon comprend une salle de stockage de donn\'e9es de 350 m2 qui doit pouvoir fonctionner de mani\'e8re autonome: il peut \'eatre aliment\'e9 par un groupe \'e9lectrog\'e8ne et dispose de son propre syst\'e8me de climatisation. Deux cents personnes travailleront dans ce centre qui a co\'fbt\'e9 13,7 millions d''euros, a indiqu\'e9 lors d''une visite ouverte \'e0 la presse le g\'e9n\'e9ral Patrick Bazin, chef de la Direction interarm\'e9es des r\'e9seaux d''infrastructure et des syst\'e8mes d''information de la d\'e9fense (Dirisi).', '2014-05-23 09:05:17');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Structure de la table `user`\
+--\
+\
+CREATE TABLE `user` (\
+  `id` int(11) NOT NULL AUTO_INCREMENT,\
+  `secondName` varchar(250) NOT NULL,\
+  `firstName` varchar(250) NOT NULL,\
+  `emailAddress` varchar(250) NOT NULL,\
+  `password` varchar(250) NOT NULL,\
+  PRIMARY KEY (`id`),\
+  UNIQUE KEY `emailAddress` (`emailAddress`),\
+  UNIQUE KEY `emailAddress_2` (`emailAddress`),\
+  UNIQUE KEY `emailAddress_3` (`emailAddress`),\
+  UNIQUE KEY `emailAddress_4` (`emailAddress`),\
+  UNIQUE KEY `emailAddress_5` (`emailAddress`)\
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;\
+\
+--\
+-- Contenu de la table `user`\
+--\
+\
+INSERT INTO `user` (`id`, `secondName`, `firstName`, `emailAddress`, `password`) VALUES\
+(21, 'David', 'Vincent', 'dvincent@hotmail.fr', '3dbe00a167653a1aaee01d93e77e730e'),\
+(22, 'Robert', 'Denis', 'rdenis@hotmail.fr', '3dbe00a167653a1aaee01d93e77e730e');\
+}
